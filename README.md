@@ -7,4 +7,4 @@ The idea of the application is pretty simple - we make a call to an API, which t
 ## Links & Videos
 
 - [Figma Design](https://www.figma.com/file/DTojSwldenF9UPKQZd6RRb/Sprint-10%3A-WTWR)
-- [link to WTWR on Github Page](https://maryafzali24.github.io/se_project_react)
+- [Link to WTWR on Github Page](https://maryafzali24.github.io/se_project_react)
