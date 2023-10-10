@@ -21,7 +21,7 @@ function App() {
   const [location, setLocation] = useState("");
   const [forecast, setForecast] = useState("");
   const [day, setDay] = useState(true);
-  const [currentTemperatureUnit, setCurrentTemperatureUnit] = useState("F");
+  const [currentTempUnit, setCurrentTempUnit] = useState("F");
 
   const handleCreateModal = () => {
     setActiveModal("create");
@@ -37,9 +37,7 @@ function App() {
   };
 
   const handleToggleSwitchChange = () => {
-    currentTemperatureUnit === "F"
-      ? setCurrentTemperatureUnit("C")
-      : setCurrentTemperatureUnit("F");
+    setCurrentTempUnit(currentTempUnit === "F" ? "C" : "F");
   };
 
   useEffect(() => {
@@ -91,7 +89,7 @@ function App() {
   return (
     <div className="app">
       <CurrentTemperatureUnitContext.Provider
-        value={{ currentTemperatureUnit, handleToggleSwitchChange }}
+        value={{ currentTempUnit, handleToggleSwitchChange }}
       >
         <Header weatherLocation={location} onCreateModal={handleCreateModal} />
         <Main

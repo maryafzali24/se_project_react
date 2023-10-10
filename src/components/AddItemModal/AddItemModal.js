@@ -6,7 +6,7 @@ const AddItemModal = ({ isOpen, onCloseModal, buttonText }) => {
       title="New Garment"
       isOpen={isOpen}
       onCloseModal={onCloseModal}
-      buttonText={buttonText}
+      buttonText={"Add Garment"}
     >
       <label className="modal__form-label">
         Name
@@ -40,7 +40,7 @@ const AddItemModal = ({ isOpen, onCloseModal, buttonText }) => {
           <label>
             <input
               className="modal__form-radio-btn"
-              name="radio-btn-weather"
+              name="weatherType"
               type="radio"
               id="hot"
               value="hot"
@@ -52,6 +52,7 @@ const AddItemModal = ({ isOpen, onCloseModal, buttonText }) => {
           <label>
             <input
               className="modal__form-radio-btn"
+              name="weatherType"
               type="radio"
               id="warm"
               value="warm"
@@ -63,6 +64,7 @@ const AddItemModal = ({ isOpen, onCloseModal, buttonText }) => {
           <label>
             <input
               className="modal__form-radio-btn"
+              name="weatherType"
               type="radio"
               id="cold"
               value="cold"
