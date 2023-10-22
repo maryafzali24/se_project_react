@@ -11,13 +11,20 @@ const ItemModal = ({ selectedCard, onCloseModal, handleDeleteButton }) => {
         />
         <img
           className="modal__image"
-          src={selectedCard.link}
+          src={selectedCard.imageUrl}
           alt={selectedCard.name}
         />
         <div className="modal__preview-name">{selectedCard.name}</div>
         <div className="modal__preview-type">
-          Weather type: {selectedCard.weatherType}
+          Weather: {selectedCard.weather}
         </div>
+        <button
+          type="button"
+          className="modal__preview-delete-btn"
+          onClick={handleDeleteButton}
+        >
+          Delete Item
+        </button>
       </div>
     </div>
   );

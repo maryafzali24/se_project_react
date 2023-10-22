@@ -1,14 +1,28 @@
 .switch {
   display: flex;
   position: relative;
+  color: #7e7e7e;
+  transition: color linear 0.1s 0.1s;
+  cursor: pointer;
+}
+
+.switch:hover {
+  color: #000;
 }
 
 .switch__box {
   border-radius: 25px;
-  border: 2px solid black;
+  border: 2px solid #7e7e7e;
   width: 56px;
   height: 30px;
   appearance: none;
+  margin: 0;
+  color: #7e7e7e;
+  transition: border-color linear 0.1s 0.1s;
+}
+
+.switch__box:hover {
+  border-color: #000;
 }
 
 .switch__slider {
@@ -19,17 +33,28 @@
   background-color: black;
   color: white;
   text-align: center;
-  cursor: pointer;
+  /* cursor: pointer; */
+  transition: width linear 0.3s 0.1s;
+}
+
+.switch__slider:hover {
+  width: 30px;
 }
 
 .switch__slider-F {
-  top: 4px;
-  left: 6px;
+  /* top: 4px;
+  left: 6px; */
+  top: 0;
+  left: 0;
+  color: rgba(0, 0, 0, 0.5);
 }
 
 .switch__slider-C {
-  top: 4px;
-  left: 30px;
+  /* top: 4px;
+  left: 30px; */
+  top: 0;
+  left: 27px;
+  color: rgba(0, 0, 0, 0.5);
 }
 
 .switch__active {
@@ -39,8 +64,8 @@
 
 .switch__temp-F {
   position: absolute;
-  top: 6px;
-  left: 14px;
+  top: 5px;
+  left: 9px;
   color: white;
   margin: 0;
 }
@@ -48,7 +73,7 @@
 .switch__temp-C {
   position: absolute;
   top: 5px;
-  left: 38px;
+  left: 35px;
   color: white;
   margin: 0;
 }

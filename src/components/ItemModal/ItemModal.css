@@ -51,3 +51,18 @@
   margin-bottom: 28px;
   margin-left: 32px;
 }
+
+.modal__preview-delete-btn {
+  position: absolute;
+  right: 34px;
+  bottom: 72px;
+  color: #ff4d00;
+  font-family: Cabinet Grotesk, sans-serif;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 700;
+  background-color: white;
+  border: none;
+  cursor: pointer;
+  line-height: 24px;
+}

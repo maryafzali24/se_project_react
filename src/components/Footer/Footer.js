@@ -1,7 +1,6 @@
 import "./Footer.css";
 
 const Footer = () => {
-  console.log("footer");
   const year = 2023;
 
   return (
