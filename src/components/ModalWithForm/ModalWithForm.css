@@ -12,16 +12,6 @@
 }
 
 .modal__content {
-  /* position: relative;
-  flex-direction: column;
-  background-color: #fff;
-  box-shadow: 0 0 25px rgba(0, 0, 0, 0.15);
-  max-width: 496px;
-  min-height: 436px;
-  width: 100%;
-  border-radius: 20px;
-  display: flex;
-  padding: 28px 28px 36px 28px; */
   position: relative;
   background-color: white;
   max-width: 412px;
@@ -128,6 +118,6 @@
   transition: opacity linear 0.3s 0.1s;
   cursor: pointer;
 }
-.modal__submit-btn:hover {
+.modal__submit-button:hover {
   opacity: 0.3;
 }

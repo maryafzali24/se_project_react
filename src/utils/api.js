@@ -5,9 +5,6 @@ export const proccessServerResponse = (res) => {
   }
   return Promise.reject(`Error: ${res.status}`);
 };
-// export const request = (url, options) => {
-//   return fetch(url, options).then(proccessServerResponsec);
-// };
 
 export const getClothingItems = () => {
   return fetch(`${baseUrl}/items`, {

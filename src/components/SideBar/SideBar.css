@@ -5,10 +5,6 @@
   max-height: 56px;
 }
 
-/* display: flex;
-   justify-content: center; 
-  align-items: center;  */
-
 .sidebar__name {
   font-family: "Cabinet Grotesk", sans-serif;
   font-size: 20px;
@@ -20,6 +16,4 @@
 
 .sidebar__avatar {
   margin-right: 16px;
-  /* width: 56px;
-  height: 56px; */
 }

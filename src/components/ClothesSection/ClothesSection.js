@@ -1,5 +1,5 @@
 import "./ClothesSection.css";
-import ItemCard from "../../ItemCard/ItemCard";
+import ItemCard from "../ItemCard/ItemCard";
 
 const ClothesSection = ({ onSelectCard, onCreateModal, clothingItems }) => {
   return (
@@ -15,9 +15,6 @@ const ClothesSection = ({ onSelectCard, onCreateModal, clothingItems }) => {
         </button>
       </div>
       <ul className="clothes-section__cards">
-        {/* {defaultClothingItems.map((item) => (
-          <ItemCard key={item._id} item={item} onSelectCard={onSelectCard} />
-        ))} */}
         {clothingItems.map((item) => {
           return (
             <ItemCard key={item._id} item={item} onSelectCard={onSelectCard} />
