@@ -7,7 +7,6 @@
   font-family: "CabinetGrotesk-Bold", Arial, sans-serif;
   display: flex;
   position: absolute;
-  /* padding: 15px 18px 15px 18px; */
   padding: 20px 18px 20px 16px;
   text-align: center;
   align-items: center;
@@ -25,16 +24,3 @@
   height: 100%;
   border-radius: 12px;
 }
-
-/* 
-/* .weather__info {
-    position: absolute;
-    top: 20px;
-    left: 12px;
-    color: #fff;
-    font-family: "Cabinet Grotesk", sans-serif;
-    font-size: 36px;
-    font-style: normal;
-    font-weight: 700;
-    line-height: 40px; /* 111.111% */
-/* */

@@ -1,23 +1,32 @@
 .header {
+  background-color: rgb(255, 255, 255);
   display: flex;
   justify-content: space-between;
   align-items: center;
   min-height: 60px;
   padding: 32px 40px 28px 40px;
+  /* padding: 32px 28px 20px; */
   font-family: "CabinetGrotesk-Bold", Arial, sans-serif;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 700;
 }
 
 .header__container {
   display: flex;
-  gap: 20px;
+  gap: 24px;
   align-items: center;
-  flex-direction: row;
+  margin-right: auto;
 }
 
 .header__logo {
   display: flex;
   gap: 24px;
   align-items: center;
+}
+.header__button-container {
+  display: flex;
+  gap: 20px;
 }
 
 .header__add-button {
@@ -27,24 +36,79 @@
   font-size: 20px;
   transition: opacity linear 0.2s 0.1s;
   cursor: pointer;
+  margin-left: 20px;
 }
 
 .header__add-button:hover {
   opacity: 0.6;
 }
 
+.header__name,
+.header__name:link,
+.header__name:visited {
+  display: flex;
+  color: #000;
+  transition: opacity linear 0.2s 0.1s;
+  cursor: pointer;
+  text-decoration: none;
+  flex-wrap: wrap;
+  margin: 0;
+  margin-left: 20px;
+}
+
+.link__container {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  color: #000;
+}
+
+.header__login-link {
+  text-decoration: none;
+  color: #000;
+  margin-left: 20px;
+}
+
+.link__container a {
+  margin: 0;
+  text-decoration: none;
+  color: #000;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.header__name:hover {
+  opacity: 0.6;
+}
+
 .header__avatar-logo {
   display: flex;
   align-items: center;
-  gap: 24px;
-  justify-content: space-between;
+  gap: 20px;
 }
 
-.header__name {
-  color: #000;
-  font-family: "Cabinet Grotesk", sans-serif;
+.header__register-button {
+  background-color: transparent;
+  border: none;
   font-size: 20px;
-  font-style: normal;
-  font-weight: 700;
-  line-height: 24px;
+  font-family: "CabinetGrotesk-Bold", Arial, sans-serif;
+  transition: opacity linear 0.2s 0.1s;
+  cursor: pointer;
+  margin-left: 20px;
+}
+
+.header__register-button:hover {
+  opacity: 0.6;
+}
+
+.header__avatar-img {
+  display: flex;
+  align-items: center;
+  border-radius: 50px;
+  overflow: hidden;
+  max-width: 56px;
+  max-height: 56px;
+  width: 40px;
+  height: 40px;
+  margin-left: 20px;
 }

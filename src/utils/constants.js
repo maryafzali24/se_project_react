@@ -1,7 +1,6 @@
 export const latitude = 47.6061;
 export const longitude = -122.33;
-// export const latitude = 25.276987;
-// export const longitude = 55.296249;
+
 export const APIkey = "986a3a7b1fb27458ebdc3589b608f40f";
 export const baseUrl = "http://localhost:3001";
 

@@ -7,12 +7,6 @@ const ToggleSwitch = () => {
     CurrentTemperatureUnitContext
   );
 
-  // const [isChecked, setIsChecked] = useState(currentTemperatureUnit === "C");
-  // useEffect(
-  //   () => setIsChecked(currentTemperatureUnit === "C"),
-  //   [currentTemperatureUnit]
-  // );
-
   return (
     <label className="switch">
       <input

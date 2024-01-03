@@ -1,11 +1,22 @@
 .clothes-section {
   display: flex;
   flex-direction: column;
+  /* font-family: "CabinetGrotesk-Bold", Arial, sans-serif;
+  display: flex;
+  flex-direction: column;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 700;
+} */
 }
 
 .clothes-section__container {
   display: flex;
-  gap: 20px;
+  /* gap: 20px; */
+  /* position: relative;
+    margin-top: 17px;
+    margin-left: 1px;
+    margin-bottom: 10px; */
 }
 
 .clothes-section__title {
@@ -18,15 +29,17 @@
 }
 
 .clothes-section__btn {
-  color: rgba(0, 0, 0, 0.6);
+  /* color: rgba(0, 0, 0, 0.6); */
   font-family: "Cabinet Grotesk", Arial, sans-serif;
   font-size: 20px;
   font-style: normal;
   font-weight: 700;
   line-height: normal;
   border: none;
-  background: #fff;
+  /* background: #fff; */
+  background-color: transparent;
   cursor: pointer;
+  margin-left: 10px;
 }
 
 .clothes-section__btn:hover {
@@ -36,8 +49,10 @@
 .clothes-section__cards {
   display: flex;
   flex-wrap: wrap;
-  gap: 16px;
-  margin-top: 10px;
+  gap: 10px;
+  /* margin-top: 10px; */
   list-style: none;
   padding: 0;
+  /* width: 100%;
+    max-width:1010px; */
 }

@@ -1,8 +1,23 @@
-.sidebar {
+/* .sidebar {
   display: flex;
   margin-right: 116px;
   align-items: center;
   max-height: 56px;
+} */
+
+.sidebar {
+  display: flex;
+  flex-direction: column;
+  margin: 0;
+  font-family: "Cabinet Grotesk", Arial, sans-serif;
+  margin-right: 28px;
+  min-width: 322px;
+}
+
+.sidebar__content {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
 }
 
 .sidebar__name {
@@ -15,5 +30,38 @@
 }
 
 .sidebar__avatar {
-  margin-right: 16px;
+  margin-right: 20px;
+  width: 56px;
+  height: 56px;
+  border-radius: 50px;
+}
+
+.sidebar__button-logout {
+  background-color: transparent;
+  border: none;
+  font-size: 20px;
+  font-family: "CabinetGrotesk-Bold", Arial, sans-serif;
+  transition: opacity linear 0.2s 0.1s;
+  cursor: pointer;
+  margin-top: 8px;
+  align-self: flex-start;
+}
+
+.sidebar__button-logout:hover {
+  opacity: 0.6;
+}
+
+.sidebar__button-edit {
+  background-color: transparent;
+  border: none;
+  font-size: 20px;
+  font-family: "CabinetGrotesk-Bold", Arial, sans-serif;
+  transition: opacity linear 0.2s 0.1s;
+  cursor: pointer;
+  align-self: flex-start;
+  margin-top: 24px;
+}
+
+.sidebar__button-edit:hover {
+  opacity: 0.6;
 }

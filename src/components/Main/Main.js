@@ -3,8 +3,16 @@ import WeatherCard from "../WeatherCard/WeatherCard";
 import ItemCard from "../ItemCard/ItemCard";
 import { useContext } from "react";
 import { CurrentTemperatureUnitContext } from "../../contexts/CurrentTemperatureUnitContext";
+import CurrentUserContext from "../../contexts/CurrentUserContext";
 
-function Main({ weatherTemp, onSelectCard, clothingItems, forecast, day }) {
+function Main({
+  weatherTemp,
+  onSelectCard,
+  clothingItems,
+  weatherForecast,
+  isDay,
+  onLikeClick,
+}) {
   const { currentTemperatureUnit } = useContext(CurrentTemperatureUnitContext);
   const temp = weatherTemp?.temperature?.[currentTemperatureUnit] || 1000;
 
@@ -47,7 +55,7 @@ function Main({ weatherTemp, onSelectCard, clothingItems, forecast, day }) {
 
   return (
     <main className="main">
-      <WeatherCard weatherTemp={temp} day={day} type={forecast} />
+      <WeatherCard weatherTemp={temp} day={isDay} type={weatherForecast} />
       <section className="cards">
         <div className="card__header">
           Today is {temp}°{currentTemperatureUnit} / You may want to wear:
@@ -56,9 +64,10 @@ function Main({ weatherTemp, onSelectCard, clothingItems, forecast, day }) {
           {filteredCards.map((item) => (
             <ItemCard
               item={item}
-              key={item._id}
+              key={item._id || item.id}
               card={filteredCards}
               onSelectCard={onSelectCard}
+              onLikeClick={onLikeClick}
             />
           ))}
         </ul>

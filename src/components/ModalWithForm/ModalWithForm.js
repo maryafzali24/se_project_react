@@ -8,8 +8,12 @@ const ModalWithForm = ({
   onCloseModal,
   onSubmit,
   isOpen,
+  isEnabled,
 }) => {
-  // console.log("ModalWithForm");
+  const submitButtonClass = `modal__submit-button ${
+    isEnabled ? "modal__submit-button_enabled" : "modal__submit-button_disabled"
+  }`;
+
   return (
     <div className={`modal modal_type_${name}`}>
       <div className="modal__content">
@@ -17,9 +21,18 @@ const ModalWithForm = ({
         <form className="modal__form" onSubmit={onSubmit}>
           <h3 className="modal__title">{title}</h3>
           {children}
-          <button className="modal__submit-button" type="submit">
+          <button
+            className={submitButtonClass}
+            type="submit"
+            disabled={!isEnabled}
+          >
             {buttonText}
           </button>
+          <button
+            className="modal__alt-submit-button"
+            type="button"
+            onClick={onCloseModal}
+          />
         </form>
       </div>
     </div>

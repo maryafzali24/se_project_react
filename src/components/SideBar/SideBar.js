@@ -1,13 +1,40 @@
+import React from "react";
 import "./SideBar.css";
-import avatar from "../../images/avatar.svg";
+// import avatar from "../../images/avatar.svg";
+import CurrentUserContext from "../../contexts/CurrentUserContext";
+import AvatarPlaceHolder from "../AvatarPlaceHolder/AvatarPlaceHolder";
 
-const SideBar = () => {
+const SideBar = (onLogOut, onEditProfile, isLoggedIn) => {
+  const currentUser = React.useContext(CurrentUserContext);
   return (
     <div className="sidebar">
       <div className="sidebar__content">
-        <img className="sidebar__avatar" src={avatar} alt="Avatar icon" />
+        {currentUser.avatar ? (
+          <img
+            className="sidebar__avatar"
+            src={currentUser.avatar}
+            alt="Avatar icon"
+          />
+        ) : (
+          <AvatarPlaceHolder name={currentUser.name} />
+        )}
+        <p className="sidebar__name">{currentUser.name}</p>
       </div>
-      <p className="sidebar__name">Maryam Afzali</p>
+      <button
+        className="sidebar__button-edit"
+        type="button"
+        onClick={onEditProfile}
+      >
+        Change Profile Data
+      </button>
+
+      <button
+        className="sidebar__button-logout"
+        type="button"
+        onClick={onLogOut}
+      >
+        Log out
+      </button>
     </div>
   );
 };
