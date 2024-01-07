@@ -15,5 +15,14 @@ A mock server is currently used for data, which will eventually be pulled from a
 
 ## Links & Videos
 
-- [Figma Design](https://www.figma.com/file/DTojSwldenF9UPKQZd6RRb/Sprint-10%3A-WTWR)
-- [Link to WTWR on Github Page](https://maryafzali24.github.io/se_project_react)
+- [Figma Design]
+  (https://www.figma.com/file/DTojSwldenF9UPKQZd6RRb/Sprint-10%3A-WTWR?type=design&node-id=311-433&mode=design&t=4PcmtOJkzIa6Tq33-0)
+- [Link to WTWR on Github Page]
+  (https://maryafzali24.github.io/se_project_react) -[LINK FOR THE BACK-END:]
+  (https://github.com/maryafzali24/se_project_express)
+  -Running the Project
+  . npm start: Runs the app in development mode.
+  . npm run build: Builds the app for production to the build folder.
+- [Development and Deployment]
+  The front-end is developed using React, creating a seamless and interactive user experience. React Router enhances navigation efficiency, ensuring that users can easily access various parts of the application.
+  Experience the intuitive and engaging interface of the WTWR front-end!
