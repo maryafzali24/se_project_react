@@ -13,10 +13,11 @@ Users can now switch between two pages, the homepage and a profile page which ho
 This application currently uses HTML, CSS, Javascript, and React.
 A mock server is currently used for data, which will eventually be pulled from an actual database.
 
-## Links & Videos
+## Links
 
-- [Figma Design]
-  (https://www.figma.com/file/DTojSwldenF9UPKQZd6RRb/Sprint-10%3A-WTWR?type=design&node-id=311-433&mode=design&t=4PcmtOJkzIa6Tq33-0)
+Figma Design
+https://www.figma.com/file/DTojSwldenF9UPKQZd6RRb/Sprint-10%3A-WTWR?type=design&node-id=311-433&mode=design&t=4PcmtOJkzIa6Tq33-0
+
 - [Link to WTWR on Github Page]
   (https://maryafzali24.github.io/se_project_react) -[LINK FOR THE BACK-END:]
   (https://github.com/maryafzali24/se_project_express)
