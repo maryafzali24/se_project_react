@@ -8,6 +8,7 @@ const WeatherCard = ({ day, type, weatherTemp = "" }) => {
   const weatherOption = weatherOptions.find((option) => {
     return option.day === day && option.weather === type;
   });
+  console.log(type);
   console.log(day);
   console.log(weatherOption);
   // const weatherOptionUrl = weatherOption?.imageUrl || "";

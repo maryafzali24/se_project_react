@@ -36,6 +36,7 @@ function Main({
     }
   };
   const weatherType = getWeatherType();
+  console.log(weatherType);
 
   // const weatherType = useMemo(() => {
   //   if (currentTemperatureUnit === "F") {
