@@ -109,7 +109,6 @@ function App() {
   // }, []);
 
   useEffect(() => {
-    console.log(getClothingItems);
     getClothingItems()
       .then((res) => {
         if (Array.isArray(res)) {
@@ -331,8 +330,8 @@ function App() {
                 weatherTemp={temp}
                 onSelectCard={handleSelectedCard}
                 clothingItems={clothingItems}
-                type={forecast}
-                day={day}
+                weatherForecast={forecast}
+                isDay={day}
                 onLikeClick={handleLikeClick}
               />
             </Route>
