@@ -9,8 +9,12 @@ const LogInModal = ({
   onSubmit,
   buttonText,
   openRegisterModal,
+  handleClick,
 }) => {
-  const { values, handleChange } = useForm({ email: "", password: "" });
+  const { values, handleChange, isValid } = useForm({
+    email: "",
+    password: "",
+  });
   const history = useHistory();
 
   // const handleEmailChange = (e) => {
@@ -34,12 +38,13 @@ const LogInModal = ({
   return (
     <div className="login">
       <ModalWithForm
-        title="Log in"
+        title={"Log in"}
+        name={"LogIn_Modal"}
         onCloseModal={handleCloseModal}
         isOpen={isOpen}
         onSubmit={handleFormSubmitLogIn}
+        buttonState={isValid}
         buttonText={buttonText}
-        name={"LogIn_Modal"}
       >
         <label className="modal__label modal__label-login">
           Email

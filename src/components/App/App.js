@@ -48,6 +48,7 @@ function App() {
   const [isLoading, setIsLoading] = useState(false);
   const [currentUser, setCurrentUser] = useState({});
   const [isLoggedIn, setIsLoggedIn] = useState(false);
+  const [inputError, setInputError] = useState("");
 
   const history = useHistory();
 
@@ -216,6 +217,17 @@ function App() {
         .catch((err) => console.log(err));
     }
   }, []);
+  const handleAuthErrors = (error) => {
+    const errorMessage = error.message || "";
+    setInputError(
+      errorMessage.includes("invalid email")
+        ? "Invalid Email"
+        : errorMessage.includes("incorrect password")
+        ? "Incorrect Password"
+        : "Login Failed. Please Try Again"
+    );
+    console.error(error);
+  };
 
   const handleRegisterModal = () => {
     setActiveModal("register-signup");
@@ -243,6 +255,7 @@ function App() {
   const handleLogInSubmit = (data) => {
     setIsLoading(true);
     return auth.logIn(data).then((res) => {
+      console.log("user is logged in ");
       if (res.token) {
         localStorage.setItem("jwt", res.token);
         setIsLoggedIn(true);
@@ -251,9 +264,11 @@ function App() {
           .then((user) => {
             setCurrentUser(user.data);
             history.push("/profile");
+            console.log("about to close modal");
             handleCloseModal();
+            console.log("modal is closed");
           })
-          .catch((err) => console.log(err))
+          .catch(handleAuthErrors)
           .finally(() => setIsLoading(false));
       }
     });
@@ -392,6 +407,7 @@ function App() {
               buttonText={isLoading ? "Logging In..." : "Log In"}
               onSubmit={handleLogInSubmit}
               openRegisterModal={handleRegisterModal}
+              inputError={inputError}
             />
           )}
           {activeModal === "edit-profile" && (

@@ -1,3 +1,4 @@
+import React from "react";
 import "./ModalWithForm.css";
 
 const ModalWithForm = ({
@@ -24,7 +25,7 @@ const ModalWithForm = ({
           <button
             className={submitButtonClass}
             type="submit"
-            disabled={!isEnabled}
+            // disabled={!isEnabled}
           >
             {buttonText}
           </button>

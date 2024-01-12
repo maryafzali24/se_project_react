@@ -13,7 +13,7 @@ export const weatherOptions = [
   {
     url: require("../images/day/day-cloudy.svg").default,
     day: true,
-    type: "cloudy",
+    type: "clouds",
   },
   {
     url: require("../images/day/day-fog.svg").default,
@@ -36,6 +36,11 @@ export const weatherOptions = [
     type: "storm",
   },
   {
+    url: require("../images/night/night-rain.svg").default,
+    day: true,
+    type: "mist",
+  },
+  {
     url: require("../images/night/night-clear.svg").default,
     day: false,
     type: "clear",
@@ -43,7 +48,7 @@ export const weatherOptions = [
   {
     url: require("../images/night/night-cloudy.svg").default,
     day: false,
-    type: "cloudy",
+    type: "clouds",
   },
   {
     url: require("../images/night/night-fog.svg").default,
@@ -54,6 +59,11 @@ export const weatherOptions = [
     url: require("../images/night/night-rain.svg").default,
     day: false,
     type: "rain",
+  },
+  {
+    url: require("../images/night/night-rain.svg").default,
+    day: false,
+    type: "mist",
   },
   {
     url: require("../images/night/night-snow.svg").default,

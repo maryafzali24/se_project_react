@@ -11,7 +11,7 @@ const RegisterModal = ({
   onSubmit,
   openLogInModal,
 }) => {
-  const { values, handleChange } = useForm({
+  const { values, handleChange, isValid } = useForm({
     email: "",
     password: "",
     name: "",
@@ -36,6 +36,7 @@ const RegisterModal = ({
         isOpen={isOpen}
         onCloseModal={handleCloseModal}
         buttonText={buttonText}
+        buttonState={isValid}
         onSubmit={handleFormSubmitRegister}
         name={"Register_modal"}
       >

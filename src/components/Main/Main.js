@@ -55,7 +55,7 @@ function Main({
   //     } else if (temp < 18) {
   //       return "cold";
   //     }
-  //   }
+  //   }F
   // }, [currentTemperatureUnit, temp]);
 
   const filteredCards = clothingItems.filter((item) => {
