@@ -1,4 +1,5 @@
 import { baseUrl } from "./constants";
+import { proccessServerResponse } from "./Api";
 
 export const register = ({ email, password, name, avatar }) => {
   return fetch(`${baseUrl}/signup`, {
@@ -7,7 +8,7 @@ export const register = ({ email, password, name, avatar }) => {
       "Content-Type": "application/json",
     },
     body: JSON.stringify({ email, password, name, avatar }),
-  });
+  }).then(proccessServerResponse);
 };
 
 export const logIn = ({ email, password }) => {
@@ -17,7 +18,7 @@ export const logIn = ({ email, password }) => {
       "Content-Type": "application/json",
     },
     body: JSON.stringify({ email, password }),
-  });
+  }).then(proccessServerResponse);
 };
 
 export const editProfile = ({ name, avatar }) => {
@@ -29,7 +30,7 @@ export const editProfile = ({ name, avatar }) => {
       Authorization: `Bearer ${jwt}`,
     },
     body: JSON.stringify({ name, avatar }),
-  });
+  }).then(proccessServerResponse);
 };
 
 export const checkToken = () => {
@@ -40,5 +41,5 @@ export const checkToken = () => {
       "Content-Type": "application/json",
       Authorization: `Bearer ${jwt}`,
     },
-  });
+  }).then(proccessServerResponse);
 };
