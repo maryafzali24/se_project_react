@@ -8,16 +8,16 @@ function Profile({
   clothingItems,
   onSelectCard,
   onCreateModal,
-  handleLogOut,
+  onLogOut,
   isLoggedIn,
   handleEditProfileModal,
-  onCardLike,
+  onLikeClick,
 }) {
   // const currentUser = React.useContext(CurrentUserContext);
   return (
     <main className="profile">
       <SideBar
-        handleLogOut={handleLogOut}
+        onLogOut={onLogOut}
         isLoggedIn={isLoggedIn}
         handleEditProfileModal={handleEditProfileModal}
       />
@@ -26,7 +26,7 @@ function Profile({
         onSelectCard={onSelectCard}
         onCreateModal={onCreateModal}
         isLoggedIn={isLoggedIn}
-        onCardLike={onCardLike}
+        onLikeClick={onLikeClick}
       />
     </main>
   );

@@ -4,7 +4,7 @@ import "./SideBar.css";
 import CurrentUserContext from "../../contexts/CurrentUserContext";
 import AvatarPlaceHolder from "../AvatarPlaceHolder/AvatarPlaceHolder";
 
-const SideBar = (onLogOut, onEditProfile, isLoggedIn) => {
+const SideBar = ({ onLogOut, handleEditProfileModal, isLoggedIn }) => {
   const currentUser = React.useContext(CurrentUserContext);
   return (
     <div className="sidebar">
@@ -23,7 +23,7 @@ const SideBar = (onLogOut, onEditProfile, isLoggedIn) => {
       <button
         className="sidebar__button-edit"
         type="button"
-        onClick={onEditProfile}
+        onClick={handleEditProfileModal}
       >
         Change Profile Data
       </button>

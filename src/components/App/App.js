@@ -291,6 +291,7 @@ function App() {
   };
 
   const handleLogOut = () => {
+    console.log("Logout");
     localStorage.removeItem("jwt");
     setIsLoggedIn(false);
     setCurrentUser({});
@@ -359,7 +360,7 @@ function App() {
                   isLoggedIn={isLoggedIn}
                   currentUser={currentUser}
                   onLogOut={handleLogOut}
-                  editProfile={handleEditProfileModal}
+                  handleEditProfileModal={handleEditProfileModal}
                   onLikeClick={handleLikeClick}
                 />
               </ProtectedRoute>
@@ -413,7 +414,7 @@ function App() {
           {activeModal === "edit-profile" && (
             <EditProfileModal
               handleCloseModal={handleCloseModal}
-              isOpen={activeModal === "edit-profile"}
+              isOpen={activeModal === "dedit-profile"}
               buttonText={isLoading ? "Saving.." : "Save Changes"}
               onSubmit={handleEditProfileSubmit}
             />

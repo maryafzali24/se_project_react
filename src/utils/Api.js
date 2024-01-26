@@ -46,7 +46,7 @@ export const addCardLike = (itemId, token) => {
     headers: {
       Authorization: `Bearer ${localStorage.getItem("jwt")}`,
     },
-  });
+  }).then(proccessServerResponse);
 };
 
 export const removeCardLike = (itemId, token) => {
@@ -55,5 +55,5 @@ export const removeCardLike = (itemId, token) => {
     headers: {
       Authorization: `Bearer ${localStorage.getItem("jwt")}`,
     },
-  });
+  }).then(proccessServerResponse);
 };
