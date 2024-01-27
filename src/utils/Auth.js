@@ -1,45 +1,45 @@
 import { baseUrl } from "./constants";
-import { proccessServerResponse } from "./Api";
+import { request } from "./Api";
 
 export const register = ({ email, password, name, avatar }) => {
-  return fetch(`${baseUrl}/signup`, {
+  return request(`${baseUrl}/signup`, {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
     },
     body: JSON.stringify({ email, password, name, avatar }),
-  }).then(proccessServerResponse);
+  });
 };
 
 export const logIn = ({ email, password }) => {
-  return fetch(`${baseUrl}/signin`, {
+  return request(`${baseUrl}/signin`, {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
     },
     body: JSON.stringify({ email, password }),
-  }).then(proccessServerResponse);
+  });
 };
 
 export const editProfile = ({ name, avatar }) => {
   const jwt = localStorage.getItem("jwt");
-  return fetch(`${baseUrl}/users/me`, {
+  return request(`${baseUrl}/users/me`, {
     method: "PATCH",
     headers: {
       "Content-Type": "application/json",
       Authorization: `Bearer ${jwt}`,
     },
     body: JSON.stringify({ name, avatar }),
-  }).then(proccessServerResponse);
+  });
 };
 
 export const checkToken = () => {
   const jwt = localStorage.getItem("jwt");
-  return fetch(`${baseUrl}/users/me`, {
+  return request(`${baseUrl}/users/me`, {
     method: "GET",
     headers: {
       "Content-Type": "application/json",
       Authorization: `Bearer ${jwt}`,
     },
-  }).then(proccessServerResponse);
+  });
 };

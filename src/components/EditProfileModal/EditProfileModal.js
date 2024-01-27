@@ -25,7 +25,7 @@ const EditProfileModal = ({
     <div className="edit__profile">
       <ModalWithForm
         title="Change Profile Data"
-        onCloseModal={handleCloseModal}
+        onClose={handleCloseModal}
         isOpen={isOpen}
         onSubmit={handleFormSubmitEdit}
         buttonText={buttonText}

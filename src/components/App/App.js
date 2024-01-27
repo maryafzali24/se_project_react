@@ -68,6 +68,7 @@ function App() {
   }, [activeModal]);
 
   useEffect(() => {
+    if (!activeModal) return;
     function handleClickOffModal(event) {
       if (event.target.classList.contains("modal")) {
         handleCloseModal();
@@ -76,7 +77,7 @@ function App() {
 
     document.addEventListener("click", handleClickOffModal);
     return () => document.removeEventListener("click", handleClickOffModal);
-  }, []);
+  }, [activeModal]);
 
   const handleCloseModal = () => {
     setActiveModal("");
@@ -99,16 +100,6 @@ function App() {
 
   /********************CLothing Items***********************/
 
-  // useEffect(() => {
-  //   getClothingItems()
-  //     .then((data) => {
-  //       setClothingItems(data);
-  //     })
-  //     .catch((error) => {
-  //       console.log(error);
-  //     });
-  // }, []);
-
   useEffect(() => {
     getClothingItems()
       .then((res) => {
@@ -130,21 +121,6 @@ function App() {
     setSelectedCard(card);
   };
 
-  // const handleAddNewItemSubmit = (values) => {
-  //   const token = localStorage.getItem("jwt");
-  //   // const item = {
-  //   //   name: values.name,
-  //   //   imageUrl: values.imageUrl,
-  //   //   weather: values.weatherType,
-  //   // };
-  //   const newClothesRequest = () => {
-  //     return addNewClothingItem(item, token).then((item) => {
-  //       setClothingItems([item, ...clothingItems]);
-  //     });
-  //   };
-  //   handleSubmit(newClothesRequest);
-  // };
-
   const handleAddNewItemSubmit = (newItem) => {
     const token = localStorage.getItem("jwt");
 
@@ -160,10 +136,11 @@ function App() {
   };
 
   const handleDeleteItemSubmit = (selectedCard) => {
+    const token = localStorage.getItem("jwt");
     const deleteCardRequest = () => {
-      return deleteClothingItems(selectedCard).then(() => {
+      return deleteClothingItems(selectedCard._id).then(() => {
         const newItem = clothingItems.filter((item) => {
-          return item._id !== selectedCard;
+          return item._id !== selectedCard._id;
         });
         setClothingItems(newItem);
       });
@@ -214,7 +191,7 @@ function App() {
             history.push("/");
           }
         })
-        .catch((err) => console.log(err));
+        .catch(console.error);
     }
   }, []);
   const handleAuthErrors = (error) => {
@@ -371,7 +348,7 @@ function App() {
           {activeModal === "create" && (
             <AddItemModal
               isOpen={activeModal === "create"}
-              onCloseModal={handleCloseModal}
+              onClose={handleCloseModal}
               buttonText={isLoading ? "Saving..." : "Add garment"}
               onAddItem={handleAddNewItemSubmit}
               handleSubmit={handleSubmit}
@@ -380,14 +357,14 @@ function App() {
           {activeModal === "preview" && (
             <ItemModal
               selectedCard={selectedCard}
-              onCloseModal={handleCloseModal}
-              handleDeleteButton={handleOpenConfirmationModal}
+              onClose={handleCloseModal}
+              onDeleteCard={handleOpenConfirmationModal}
             />
           )}
           {activeModal === "confirm" && (
             <ConfirmationModal
               selectedCard={selectedCard}
-              onCloseModal={handleCloseModal}
+              onClose={handleCloseModal}
               onDeleteItem={handleDeleteItemSubmit}
               buttonText={isLoading ? "Deleting..." : "Yes, delete item"}
             />

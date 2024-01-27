@@ -26,11 +26,11 @@ function Main({
         return "cold";
       }
     } else if (currentTemperatureUnit === "C") {
-      if (temp >= "30") {
+      if (temp >= 30) {
         return "hot";
-      } else if (temp >= "18" && temp < "30") {
+      } else if (temp >= 18 && temp < 30) {
         return "warm";
-      } else if (temp < "18") {
+      } else if (temp < 18) {
         return "cold";
       }
     }

@@ -2,12 +2,7 @@ import React, { useContext } from "react";
 import CurrentUserContext from "../../contexts/CurrentUserContext";
 import "./ItemModal.css";
 
-const ItemModal = ({
-  selectedCard,
-  onCloseModal,
-  onDeleteCard,
-  buttonText,
-}) => {
+const ItemModal = ({ selectedCard, onClose, onDeleteCard }) => {
   // Checking if the current user is the owner of the current clothing item
   // const userContext = useContext(CurrentUserContext);
   const currentUser = React.useContext(CurrentUserContext);
@@ -28,7 +23,7 @@ const ItemModal = ({
         <button
           className="modal__close-btn-white"
           type="button"
-          onClick={onCloseModal}
+          onClick={onClose}
         />
         <img
           className="modal__image"
@@ -45,12 +40,11 @@ const ItemModal = ({
             className={itemDeleteButtonClassName}
             onClick={handleDeleteCard}
           >
-            {buttonText}
+            Delete item
           </button>
         )}
       </div>
     </div>
   );
 };
-
 export default ItemModal;

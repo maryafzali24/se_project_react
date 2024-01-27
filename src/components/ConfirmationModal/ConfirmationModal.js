@@ -1,13 +1,9 @@
+import React from "react";
 import "./ConfirmationModal.css";
 
-const ConfirmationModal = ({
-  selectedCard,
-  onCloseModal,
-  onDeleteItem,
-  buttonText,
-}) => {
+const ConfirmationModal = ({ selectedCard, onClose, onDeleteItem }) => {
   const handleDeleteItemSubmit = () => {
-    onDeleteItem(selectedCard._id);
+    onDeleteItem(selectedCard);
   };
   return (
     <div className={`modal`}>
@@ -15,7 +11,7 @@ const ConfirmationModal = ({
         <button
           className="modal__confrim-close-btn"
           type="button"
-          onClick={onCloseModal}
+          onClick={onClose}
         />
         <div className="modal__confirm-text-wrapper">
           <p className="modal__confirm-text">
@@ -28,12 +24,12 @@ const ConfirmationModal = ({
           type="button"
           onClick={handleDeleteItemSubmit}
         >
-          {buttonText}
+          Yes, delete item
         </button>
         <button
           className="modal__confirm-cancel-btn"
           type="button"
-          onClick={onCloseModal}
+          onClick={onClose}
         >
           Cancel
         </button>

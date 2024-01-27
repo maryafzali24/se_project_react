@@ -1,28 +1,17 @@
 import React from "react";
 import { useForm } from "../../hooks/useForm";
 import ModalWithForm from "../ModalWithForm/ModalWithForm";
+import { useEffect } from "react";
 
-const AddItemModal = ({ isOpen, onCloseModal, buttonText, onAddItem }) => {
-  // const [name, setName] = useState("");
-  // const [imageUrl, setImageUrl] = useState("");
-  // const [weatherType, setWeatherType] = useState("");
-
-  // const handleNameChange = (e) => {
-  //   setName(e.target.value);
-  // };
-
-  // const handleUrlChange = (e) => {
-  //   setImageUrl(e.target.value);
-  // };
-
-  // const handleWeatherTypeChange = (e) => {
-  //   setWeatherType(e.target.value);
-  // };
-
-  const { values, handleChange } = useForm({
+const AddItemModal = ({ isOpen, handleCloseModal, buttonText, onAddItem }) => {
+  const initialValues = {
     name: "",
     imageUrl: "",
     weather: "",
+  };
+
+  const { values, handleChange, setValues } = useForm({
+    initialValues,
   });
 
   const handleAddItemSubmit = (e) => {
@@ -30,19 +19,17 @@ const AddItemModal = ({ isOpen, onCloseModal, buttonText, onAddItem }) => {
     onAddItem(values);
   };
 
-  // useEffect(() => {
-  //   if (!isOpen) {
-  //     setName("");
-  //     setImageUrl("");
-  //     setWeatherType("");
-  //   }
-  // }, [isOpen]);
+  useEffect(() => {
+    if (!isOpen) {
+      setValues(initialValues);
+    }
+  }, [isOpen]);
 
   return (
     <ModalWithForm
       title="New Garment"
       isOpen={isOpen}
-      onCloseModal={onCloseModal}
+      onClose={handleCloseModal}
       buttonText={buttonText}
       onSubmit={handleAddItemSubmit}
     >

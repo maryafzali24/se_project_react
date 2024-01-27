@@ -10,9 +10,6 @@
 }
 .card__name {
   position: absolute;
-  /* top: 18px;
-  right: 140px;
-  margin: 0; */
   top: 1px;
   left: 113px;
   right: 105px;

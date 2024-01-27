@@ -11,19 +11,11 @@ const LogInModal = ({
   openRegisterModal,
   handleClick,
 }) => {
-  const { values, handleChange, isValid } = useForm({
+  const { values, handleChange } = useForm({
     email: "",
     password: "",
   });
   const history = useHistory();
-
-  // const handleEmailChange = (e) => {
-  //   setEmail(e.target.value);
-  // };
-
-  // const handlePasswordChange = (e) => {
-  //   setPassword(e.target.value);
-  // };
 
   const handleFormSubmitLogIn = (e) => {
     e.preventDefault();
@@ -40,10 +32,9 @@ const LogInModal = ({
       <ModalWithForm
         title={"Log in"}
         name={"LogIn_Modal"}
-        onCloseModal={handleCloseModal}
+        onClose={handleCloseModal}
         isOpen={isOpen}
         onSubmit={handleFormSubmitLogIn}
-        buttonState={isValid}
         buttonText={buttonText}
       >
         <label className="modal__label modal__label-login">

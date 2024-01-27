@@ -35,8 +35,8 @@
   height: 20px;
   border: none;
   cursor: pointer;
-  right: 28px;
-  top: 20px;
+  right: 25px;
+  top: 21px;
   transition: 0.3s ease-in-out;
 }
 
@@ -92,7 +92,6 @@
   white-space: nowrap;
   overflow: hidden;
   border-bottom: 1px solid rgba(0, 0, 0, 1);
-  /* margin: 8px 0 24px; */
   margin: 0;
   padding: 0;
   padding-left: 6px;
@@ -106,8 +105,6 @@
   font-weight: 700;
   line-height: 20px;
   margin: 0 0 12px;
-  /* margin-top: 24px;
-  margin-bottom: 10px; */
 }
 
 .modal__radio-inputs {
@@ -156,7 +153,6 @@
   line-height: 1.1;
   margin-top: 32px;
   margin-bottom: 36px;
-  /* margin-right: 344px; */
   width: 124px;
   height: 36px;
   color: #fff;

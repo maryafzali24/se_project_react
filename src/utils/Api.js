@@ -6,54 +6,52 @@ export const proccessServerResponse = (res) => {
   return Promise.reject(`Error: ${res.status}`);
 };
 
+export function request(url, options) {
+  return fetch(url, options).then(proccessServerResponse);
+}
+
 export const getClothingItems = () => {
-  return fetch(`${baseUrl}/items`, {
+  return request(`${baseUrl}/items`, {
     headers: {
       "Content-Type": "application/json",
     },
-  }).then(proccessServerResponse);
+  });
 };
 
 export const addNewClothingItem = (item, token) => {
-  return fetch(`${baseUrl}/items`, {
+  return request(`${baseUrl}/items`, {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
       Authorization: `Bearer ${localStorage.getItem("jwt")}`,
     },
-    body: JSON.stringify(
-      // name: item.name,
-      // imageUrl: item.imageUrl,
-      // weather: item.weather,
-      item,
-      token
-    ),
-  }).then(proccessServerResponse);
+    body: JSON.stringify(item, token),
+  });
 };
 
 export const deleteClothingItems = (id) => {
-  return fetch(`${baseUrl}/items/${id}`, {
+  return request(`${baseUrl}/items/${id}`, {
     method: "DELETE",
     headers: {
       Authorization: `Bearer ${localStorage.getItem("jwt")}`,
     },
-  }).then(proccessServerResponse);
+  });
 };
 
 export const addCardLike = (itemId, token) => {
-  return fetch(`${baseUrl}/items/${itemId}/likes`, {
+  return request(`${baseUrl}/items/${itemId}/likes`, {
     method: "PUT",
     headers: {
       Authorization: `Bearer ${localStorage.getItem("jwt")}`,
     },
-  }).then(proccessServerResponse);
+  });
 };
 
 export const removeCardLike = (itemId, token) => {
-  return fetch(`${baseUrl}/items/${itemId}/likes`, {
+  return request(`${baseUrl}/items/${itemId}/likes`, {
     method: "DELETE",
     headers: {
       Authorization: `Bearer ${localStorage.getItem("jwt")}`,
     },
-  }).then(proccessServerResponse);
+  });
 };

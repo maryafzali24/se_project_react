@@ -13,7 +13,7 @@ const SideBar = ({ onLogOut, handleEditProfileModal, isLoggedIn }) => {
           <img
             className="sidebar__avatar"
             src={currentUser.avatar}
-            alt="Avatar icon"
+            alt={currentUser.name}
           />
         ) : (
           <AvatarPlaceHolder name={currentUser.name} />
