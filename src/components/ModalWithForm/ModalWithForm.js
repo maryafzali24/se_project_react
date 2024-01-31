@@ -22,14 +22,13 @@ const ModalWithForm = ({
         <form className="modal__form" onSubmit={onSubmit}>
           <h3 className="modal__title">{title}</h3>
           {children}
-          {/* <button
+          <button
             className={submitButtonClass}
             type="submit"
             // disabled={!isEnabled}
           >
             {buttonText}
           </button>
-          */}
         </form>
       </div>
     </div>
