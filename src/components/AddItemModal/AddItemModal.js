@@ -10,9 +10,7 @@ const AddItemModal = ({ isOpen, handleCloseModal, buttonText, onAddItem }) => {
     weather: "",
   };
 
-  const { values, handleChange, setValues } = useForm({
-    initialValues,
-  });
+  const { values, handleChange, setValues } = useForm(initialValues);
 
   const handleAddItemSubmit = (e) => {
     e.preventDefault();
