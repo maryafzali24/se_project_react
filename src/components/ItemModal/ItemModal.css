@@ -63,11 +63,8 @@
   font-family: "CabinetGrotesk-Bold", Arial, sans-serif;
   transition: opacity linear 0.2s 0.1s;
   cursor: pointer;
-  padding: 0;
-  /* bottom: 48px;
-  right: 39px; */
-  height: fit-content;
-  width: fit-content;
+  bottom: 35px;
+  right: 39px;
 }
 
 .button__delete-preview:hover {
