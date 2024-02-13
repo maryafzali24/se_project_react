@@ -1,7 +1,6 @@
 import { Link } from "react-router-dom/cjs/react-router-dom";
 import ModalWithForm from "../ModalWithForm/ModalWithForm";
 import { useForm } from "../../hooks/useForm";
-import { useHistory } from "react-router-dom/cjs/react-router-dom";
 
 const LogInModal = ({
   handleCloseModal,
@@ -15,7 +14,6 @@ const LogInModal = ({
     email: "",
     password: "",
   });
-  // const history = useHistory();
 
   const handleFormSubmitLogIn = (e) => {
     e.preventDefault();

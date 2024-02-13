@@ -1,6 +1,6 @@
 // Register.js
 
-import { Link, useHistory } from "react-router-dom";
+import { Link } from "react-router-dom";
 import ModalWithForm from "../ModalWithForm/ModalWithForm";
 import { useForm } from "../../hooks/useForm";
 
@@ -17,7 +17,6 @@ const RegisterModal = ({
     name: "",
     avatar: "",
   });
-  // const history = useHistory();
 
   const handleFormSubmitRegister = (e) => {
     e.preventDefault();
