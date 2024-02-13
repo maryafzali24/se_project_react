@@ -136,7 +136,7 @@ function App() {
   };
 
   const handleDeleteItemSubmit = (selectedCard) => {
-    const token = localStorage.getItem("jwt");
+    // const token = localStorage.getItem("jwt");
     const deleteCardRequest = () => {
       return deleteClothingItems(selectedCard._id).then(() => {
         const newItem = clothingItems.filter((item) => {

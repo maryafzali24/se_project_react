@@ -17,7 +17,7 @@ const RegisterModal = ({
     name: "",
     avatar: "",
   });
-  const history = useHistory();
+  // const history = useHistory();
 
   const handleFormSubmitRegister = (e) => {
     e.preventDefault();

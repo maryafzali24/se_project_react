@@ -2,7 +2,11 @@ export const latitude = 47.6061;
 export const longitude = -122.33;
 
 export const APIkey = "986a3a7b1fb27458ebdc3589b608f40f";
-export const baseUrl = "http://localhost:3001";
+// export const baseUrl = "http://localhost:3001";
+export const baseUrl =
+  process.env.NODE_ENV === "production"
+    ? "deployed-backend-url"
+    : "http://localhost:3001";
 
 export const weatherOptions = [
   {

@@ -15,7 +15,7 @@ const LogInModal = ({
     email: "",
     password: "",
   });
-  const history = useHistory();
+  // const history = useHistory();
 
   const handleFormSubmitLogIn = (e) => {
     e.preventDefault();
